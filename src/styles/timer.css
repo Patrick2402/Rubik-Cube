@@ -67,3 +67,12 @@
 p{
     letter-spacing:8px;
 }
+
+
+.small-brick{
+    width: 100%;
+    background-color: black;
+    color: orange;
+    padding: 2px;
+    
+}

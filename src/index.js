@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import '/Users/patryk/Desktop/projekt/src/styles/index.css'
-import '/Users/patryk/Desktop/projekt/src/styles/App.css'
+import '../src/styles/index.css'
+import '../src/styles/App.css'
 
 import reportWebVitals from './reportWebVitals';
 import Timer from './pages/Timer';

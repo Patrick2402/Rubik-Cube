@@ -6,7 +6,8 @@ function Timer() {
   const [intervalId, setIntervalId] = useState(0);
   const [running,setRunning] = useState(false);
   const [timelists,setTimeLists] = useState([]);
- const startTimer = () => {
+
+ const startTimer = (e) => {
     if (intervalId) {
       clearInterval(intervalId);
       setIntervalId(0); 
@@ -20,6 +21,7 @@ function Timer() {
     setIntervalId(newIntervalId);
     setRunning(true);
     setSec(0);
+    e.preventDefault();
   };
 
 let moveturn = ["R","U","L","D","B","F","D'","U'","L'","R'","F'","B'","U2","D2","B2","F2","R2","L2"];
@@ -42,6 +44,8 @@ const chooseturn = () =>{
     return  array;
 };
 
+const xd = timelists.map((number) => <div className="small-brick">{number}</div>);
+
   return (
     <div className="timer" >
       <div className="scramble"> 
@@ -49,6 +53,7 @@ const chooseturn = () =>{
       </div>
       <div className="test">
       <div className="timelist">
+        {xd}
       </div>  
       <div className="clock"> 
           <p className="time">{intervalId ? seconds[0]:(sec/1000).toFixed(2)}</p>
