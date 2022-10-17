@@ -1,0 +1,131 @@
+/* Homepage styles */
+.canva{ 
+  background-color: black;
+  color: orange;  
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* Navbar styles */
+.navbar{
+  width: 100%;
+  min-height: 4em;
+  background-color: white;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: 100%;
+
+}
+
+.brick{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 32px;
+  color: orange;
+  text-decoration: none;
+}
+
+
+
+.Forms-homepage
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+
+form{
+  width: 40%;
+  display: flex;
+  justify-content: left;  
+  flex-direction: column;
+  align-items: left;
+  gap: 1em;
+}
+
+.input-email,.input-key{
+  padding: 1em;
+  background-color: black;
+  border: none;
+  width: 60%;
+  height: 2em;
+  font-size: 1em;
+  letter-spacing: 3px;
+  transition: all ease 1.5s;
+  border-bottom: 1px solid white;
+  color: orange;
+}
+
+.input-email::placeholder,.input-key::placeholder{
+  color:orange;
+  font-weight: bold; 
+}
+.input-email:focus,.input-key:focus{
+  outline: none;
+  width: 90%;
+  border-bottom: 1px orange solid;
+  color: orange;
+}
+
+.btn{
+  background-color: orange;
+  color: black;
+  min-width: 4em;
+  max-width: 7em;
+  font-weight: bold;
+  font-size: 1.5em;
+  border-radius: 1em;
+  border: none;
+  padding: 0.5em;
+  transition: all ease-in-out 0.3s;
+  letter-spacing: 3px;
+}
+
+.btn:hover{
+  transform: scale(0.95);
+  cursor: pointer;
+  border: 1px solid orange;
+  background-color: black;
+  color: orange;
+}
+
+
+.label-forms{
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+}
+
+
+
+.forgot-password{
+  text-decoration: none;
+  color: orange;
+  transition: all 0.3s ;
+}
+.forgot-password:hover{
+  color: white;
+}
+@media screen and (max-width:670px){
+.navbar{
+  grid-template-columns: 100%;
+  grid-template-rows: 4em 4em 4em 4em;
+}
+form{
+width: 80%;
+}
+  
+}
+
+
+
+
