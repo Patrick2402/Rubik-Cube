@@ -7,14 +7,25 @@ function Timer() {
   const [running,setRunning] = useState(false);
   const [timelists,setTimeLists] = useState([]);
 
- const startTimer = (e) => {
+const startTimer = (e) => {
     if (intervalId) {
       clearInterval(intervalId);
       setIntervalId(0); 
       setRunning(false);
-      const x = sec/1000;
-      setTimeLists(oldArray => [...oldArray,x ]);
-      console.log(timelists);
+      const formatTime = ((sec)=> {
+            if (sec <= 60) {
+                return (sec/1000).toString();
+            }
+            else {
+                const min = (sec/60000).toString().split('.')[0];
+                const secon = (sec/1000-(min*60)).toString().split(".")[0];
+                const asd = (sec/1000).toString().split(".")[1];
+                const times = min+":"+secon+"."+asd;
+                return times;
+            }
+        });
+     
+      setTimeLists(oldArray => [...oldArray, formatTime(sec)]);
       return;
     }
  const newIntervalId = setInterval(() => {setSec(prevCount => prevCount + 10);}, 10);
@@ -41,22 +52,28 @@ const chooseturn = () =>{
             else  array.push(y);
         }
     };
-    return  array;
+    return array;
 };
 
-const xd = timelists.map((number) => <div className="small-brick">{number}</div>);
+const addtime = timelists.map((number,index) => 
+  <div key={index}className="small-brick">
+    <div className="one">{index+1}.</div>
+    <div className="two">{number}</div>
+    <div className="three">X</div>
+  </div>);
 
   return (
     <div className="timer" >
       <div className="scramble"> 
-        <p>{!running && chooseturn()}</p>
+        <div className="scramble-inside">{!running && chooseturn()}</div>
       </div>
       <div className="test">
       <div className="timelist">
-        {xd}
+        <h3>Times</h3>
+        <div className="wrap-xd">{addtime}</div>
       </div>  
       <div className="clock"> 
-          <p className="time">{intervalId ? seconds[0]:(sec/1000).toFixed(2)}</p>
+          <div className="time">{intervalId ? seconds[0]:(sec/1000).toFixed(2)}</div>
           <button className="btn-timer" onClick={startTimer} >{intervalId ? "Stop":"Start"}</button>
       </div>
       </div>
