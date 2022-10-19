@@ -6,9 +6,9 @@ function Playground() {
 
 
   return (
-    <div className="timer" >
-
-    </div>
+    <>
+    
+    </>
   );
 }
  

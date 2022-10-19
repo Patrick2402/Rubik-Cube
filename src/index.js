@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '../src/styles/index.css'
 import '../src/styles/App.css'
-
 import reportWebVitals from './reportWebVitals';
 import Timer from './pages/Timer';
 import Layout from './pages/Layout';

@@ -24,7 +24,6 @@ const startTimer = (e) => {
                 return times;
             }
         });
-     
       setTimeLists(oldArray => [...oldArray, formatTime(sec)]);
       return;
     }
@@ -55,11 +54,19 @@ const chooseturn = () =>{
     return array;
 };
 
+
+const handleClick = (e) => {
+  console.log('delete'); 
+  e.preventDefault();
+
+};
+
+
 const addtime = timelists.map((number,index) => 
   <div key={index}className="small-brick">
     <div className="one">{index+1}.</div>
     <div className="two">{number}</div>
-    <div className="three">X</div>
+    <div className="three" onClick={handleClick}>X</div>
   </div>);
 
   return (
