@@ -1,42 +1,35 @@
 import { useState } from "react";
-import '../styles/timer.css'
+import '../styles/timer.css';
+import {useEffect} from 'react';
 
 function Timer() {
-  const [sec, setSec] = useState(0);
-  const [intervalId, setIntervalId] = useState(0);
-  const [running,setRunning] = useState(false);
-  const [timelists,setTimeLists] = useState([]);
 
-const startTimer = (e) => {
-    if (intervalId) {
-      clearInterval(intervalId);
-      setIntervalId(0); 
-      setRunning(false);
-      const formatTime = ((sec)=> {
-            if (sec <= 60) {
-                return (sec/1000).toString();
-            }
-            else {
-                const min = (sec/60000).toString().split('.')[0];
-                const secon = (sec/1000-(min*60)).toString().split(".")[0];
-                const asd = (sec/1000).toString().split(".")[1];
-                const times = min+":"+secon+"."+asd;
-                return times;
-            }
-        });
-      setTimeLists(oldArray => [...oldArray, formatTime(sec)]);
-      return;
+const [time, setTime] = useState(0);
+const [isPaused] = useState(true);
+const [isRunning,setIsRunnging] = useState(false);
+const [timeList,setTimeList] = useState([]);
+useEffect(() => {
+    let interval = null;
+    if(isRunning && !isPaused === false){
+        interval = setInterval(() => {
+		setTime((time) => time + 10); }, 10);
+    }else{
+        clearInterval(interval);
     }
- const newIntervalId = setInterval(() => {setSec(prevCount => prevCount + 10);}, 10);
-    setIntervalId(newIntervalId);
-    setRunning(true);
-    setSec(0);
-    e.preventDefault();
-  };
+    
+  return () => {
+    clearInterval(interval);
+  }
+}, [isRunning, isPaused])
+      
+
+
 
 let moveturn = ["R","U","L","D","B","F","D'","U'","L'","R'","F'","B'","U2","D2","B2","F2","R2","L2"];
-const seconds = (sec/1000).toString().split('.');
+const seconds = (time/1000).toString().split('.');
 let array = [];
+
+// generator scrambli 
 const chooseturn = () =>{
     
     for (let x = 0; array.length < 21; x++) {
@@ -54,25 +47,41 @@ const chooseturn = () =>{
     return array;
 };
 
+//funkcja ktora startuje i zatrzymyje timer
 
-const handleClick = (e) => {
-  console.log('delete'); 
-  e.preventDefault();
-
+const handleClick = () => {
+    if (isRunning === false) setTime(0);
+    else setTimeList(oldArray => [...oldArray,timeParser(time)]);
+    setIsRunnging(r => !r)
+    //const something = timeParser();
 };
-
-
-const addtime = timelists.map((number,index) => 
+// parser czasow do stringa
+const timeParser = () => {
+    if(time <= 6000){
+        const timeInSeconds = (time/1000).toString();
+        return timeInSeconds;   
+    }else{
+                const min = (time/60000).toString().split('.')[0];
+                const secon = (time/1000-(min*60)).toString().split(".")[0];
+                const asd = (time/1000).toString().split(".")[1];
+                const times = min+":"+secon+"."+asd;
+                return times;
+    }
+};
+//dodawanie czasow do menu z lewej strony
+const addtime = timeList.map((number,index) => 
   <div key={index}className="small-brick">
     <div className="one">{index+1}.</div>
     <div className="two">{number}</div>
-    <div className="three" onClick={handleClick}>X</div>
+    <div className="three" onClick={console.log()}>X</div>
   </div>);
+// rendering 
+
 
   return (
-    <div className="timer" >
+    <div className="timer">
       <div className="scramble"> 
-        <div className="scramble-inside">{!running && chooseturn()}</div>
+        <div className="scramble-inside">{!isRunning && chooseturn()}</div>
       </div>
       <div className="test">
       <div className="timelist">
@@ -80,8 +89,8 @@ const addtime = timelists.map((number,index) =>
         <div className="wrap-xd">{addtime}</div>
       </div>  
       <div className="clock"> 
-          <div className="time">{intervalId ? seconds[0]:(sec/1000).toFixed(2)}</div>
-          <button className="btn-timer" onClick={startTimer} >{intervalId ? "Stop":"Start"}</button>
+          <div className="time"><code>{isRunning ? seconds[0]:(time/1000).toFixed(2)}</code></div>
+          <button className="btn-timer" onClick={handleClick}>{isRunning?"Stop":"Start"}</button>
       </div>
       </div>
     </div>

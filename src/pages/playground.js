@@ -1,15 +1,11 @@
 
-import '../styles/timer.css'
+import '../styles/playground.css'
 
 
 function Playground() {
 
+return (
+ <h1>XD</h1>
+)};
 
-  return (
-    <>
-    
-    </>
-  );
-}
- 
 export default Playground;
