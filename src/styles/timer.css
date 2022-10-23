@@ -101,7 +101,6 @@ h3{
     align-items: center;
     text-align: center;
     justify-content: center;
-    border-bottom: 4px solid white;
     letter-spacing: 3px;
 }
 
@@ -111,3 +110,16 @@ h3{
     }
 }
 
+
+.info-btn{
+    border-radius: 50%;
+    width: 20px;
+    height: 100%;   
+    background-color: rgb(28, 28, 28);
+    border: none;
+    color: white;
+    border: 1px solid white;
+}
+.info-btn:hover{
+    cursor: pointer;
+}
