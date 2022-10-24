@@ -6,32 +6,20 @@ const [name,setName] = useState('');
 const [ssh,setSsh] = useState('');
 
 
-var jsonData = {
-    "users": [
-        {
-            "name": "alan", 
-            "age": 23,
-            "username": "aturing"
-        },
-        {
-            "name": "john", 
-            "age": 29,
-            "username": "__john__"
-        }
-    ]
-  }
+
 
 const handleSubmit = (event) =>{
+    event.preventDefault();
     fetch('http://localhost:3000/login',{
         method:'POST',
+        headers:{"Content-Type": "application/json"},
         body: JSON.stringify({
         username: name,
         password: ssh,
   })
-
-    });
-
-    event.preventDefault();
+    }).then(() => {
+        console.log("Credentials sent");
+        });
 }
 
 const handleChange = (event) =>{
