@@ -5,19 +5,41 @@ const Forms = () => {
 const [name,setName] = useState('');
 const [ssh,setSsh] = useState('');
 
+
+var jsonData = {
+    "users": [
+        {
+            "name": "alan", 
+            "age": 23,
+            "username": "aturing"
+        },
+        {
+            "name": "john", 
+            "age": 29,
+            "username": "__john__"
+        }
+    ]
+  }
+
 const handleSubmit = (event) =>{
-    alert("E-mail: "+name+"\nKey: "+ssh);
+    fetch('http://localhost:3000/login',{
+        method:'POST',
+        body: JSON.stringify({
+        username: name,
+        password: ssh,
+  })
+
+    });
+
     event.preventDefault();
 }
 
 const handleChange = (event) =>{
     setName(event.target.value);
-    console.log(name);
 }
 
 const handleChangeSsh = (event) =>{
     setSsh(event.target.value);
-    console.log(ssh);
 }
 
 
@@ -48,7 +70,7 @@ const handleChangeSsh = (event) =>{
         <input 
             className="btn"     
             type="submit"  
-            value="Submit"  
+            value="Submit"
         />
 
     </form>

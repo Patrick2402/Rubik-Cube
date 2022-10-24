@@ -1,7 +1,7 @@
 import Forms from "../components/Forms";
 import Navbar from "../components/Navbar";
 
-const HomePage = () => {
+const Login = () => {
 
 
     return (
@@ -13,4 +13,4 @@ const HomePage = () => {
   );
 }
  
-export default HomePage;
+export default Login;

@@ -5,10 +5,11 @@ import '../src/styles/App.css'
 import reportWebVitals from './reportWebVitals';
 import Timer from './pages/Timer';
 import Layout from './pages/Layout';
-import HomePage from './pages/HomePage';
+import HomePage from './pages/Homapage';
 import NoPage from './pages/NoPage';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Playground from './pages/playground';
+import Login from './pages/Login';
 
 export default function Apps() {
   return (
@@ -17,6 +18,7 @@ export default function Apps() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="timer" element={<Timer />} />
+          <Route path="login" element={<Login />} />
           <Route path="playground" element={<Playground />} />
           <Route path="*" element={<NoPage />} />
         </Route>
