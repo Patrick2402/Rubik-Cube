@@ -2,8 +2,8 @@ import { useState } from "react";
 
 const Forms = () => {
 
-const [name,setName] = useState('');
-const [ssh,setSsh] = useState('');
+const [username,setUsername] = useState('');
+const [password,setPassword] = useState('');
 
 
 
@@ -14,8 +14,8 @@ const handleSubmit = (event) =>{
         method:'POST',
         headers:{"Content-Type": "application/json"},
         body: JSON.stringify({
-        username: name,
-        password: ssh,
+        username: username,
+        password: password,
   })
     }).then(() => {
         console.log("Credentials sent");
@@ -23,37 +23,34 @@ const handleSubmit = (event) =>{
 }
 
 const handleChange = (event) =>{
-    setName(event.target.value);
+    setUsername(event.target.value);
 }
 
 const handleChangeSsh = (event) =>{
-    setSsh(event.target.value);
-}
-
-
+    setPassword(event.target.value);
+};
     return ( 
 <div className="Forms-homepage">
     <form onSubmit={handleSubmit}>
-
        <span className="label-forms"> E-mail</span>
         <input 
             className="input-email" 
             type="email" 
             placeholder="Type email"  
-            value={name}  
+            value={username}  
             onChange={handleChange} 
             required 
         />
-        <span className="label-forms"> Key</span>
+        <span className="label-forms"> Password</span>
         <input 
             className="input-key" 
             type="text" 
             placeholder="Type key"  
-            value={ssh} 
+            value={password} 
             onChange={handleChangeSsh} 
             required
         />
-    <a href="/" className="forgot-password">Forgot key?</a>
+    <a href="/" className="forgot-password">Forgot password?</a>
 
         <input 
             className="btn"     
