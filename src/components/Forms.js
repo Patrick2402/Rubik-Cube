@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Forms = () => {
 
@@ -7,20 +8,26 @@ const [password,setPassword] = useState('');
 
 
 
+const navigate = useNavigate();
 
 const handleSubmit = (event) =>{
     event.preventDefault();
-    fetch('http://localhost:3000/login',{
+    const response = fetch('http://localhost:3000/login_req',{
         method:'POST',
         headers:{"Content-Type": "application/json"},
         body: JSON.stringify({
         username: username,
         password: password,
-  })
-    }).then(() => {
-        console.log("Credentials sent");
-        });
+        })
+    });
+    console.log(response.status)
+    if(response.status === 200) {
+        navigate("/");
+    } else {
+        alert("login failed");
+    }
 }
+   
 
 const handleChange = (event) =>{
     setUsername(event.target.value);
