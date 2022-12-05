@@ -14,6 +14,7 @@ const handleSubmit = (event) =>{
     event.preventDefault();
     const response = fetch('http://localhost:3000/login_req',{
         method:'POST',
+        mode: 'no-cors',
         headers:{"Content-Type": "application/json"},
         body: JSON.stringify({
         username: username,
@@ -50,9 +51,9 @@ const handleChangeSsh = (event) =>{
         />
         <span className="label-forms"> Password</span>
         <input 
-            className="input-key" 
-            type="text" 
-            placeholder="Type key"  
+            className="input-passwords" 
+            type="password" 
+            placeholder="Type password"  
             value={password} 
             onChange={handleChangeSsh} 
             required

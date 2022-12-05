@@ -1,0 +1,17 @@
+.hp{
+    width: 100%;
+    height: 100vh;
+    background-image: url(\homepagecube.jpg);
+    background-size: cover;
+}
+*{
+    color:white;
+}
+
+.webcamera{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

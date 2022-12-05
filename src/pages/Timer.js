@@ -1,4 +1,4 @@
-/* eslint-disable no-lone-blocks */
+
 import React, { useState } from "react";
 import '../styles/timer.css';
 import {useEffect} from 'react';
@@ -9,7 +9,19 @@ import TimeInfo from "../components/TimeInfo";
 const arr = [];
 
 
-
+function send_time(params) {
+  const response = fetch('http://localhost:3000/timer_collect',{
+      method:'POST',
+      mode: 'no-cors',
+      headers:{"Content-Type": "application/json"},
+      body: JSON.stringify({
+        time: params.time,
+        scramble: params.scramble,
+        parsedTime: params.parsedTime,
+        cookie: document.cookie
+      })
+  });
+}
 
 function Timer() {
   const [time, setTime] = useState(0);
@@ -49,6 +61,7 @@ function Timer() {
     }
     else if(time !== 0){
         setdata(oldArray => [...oldArray,{"id":i,"time":(time/1000),"scramble":singleScramble,"parsedTime":timeParser()}]);
+        send_time({"id":i,"time":(time/1000),"scramble":singleScramble,"parsedTime":timeParser()});
         seti(i=>i+1);
     }
     setIsRunnging(r => !r);
@@ -74,13 +87,7 @@ function Timer() {
 
 const add =  data.map( (val,index) =>
     <div key={index} className="small-brick">
-      <div className="one">{index+1}.</div>
-      <div className="two">{val.parsedTime}</div>
-      <div className="three" >
-        <button 
-            className="info-btn" 
-            onClick={(event)=>handleInfoClick(event,index)}>i</button>
-        </div>
+      <button className="two"onClick={(event)=>handleInfoClick(event,index)}>{val.parsedTime}</button>
     </div>);
 
   return (

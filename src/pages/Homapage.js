@@ -1,13 +1,11 @@
-import {Link,Outlet} from 'react-router-dom'
+import Navbar from "../components/Navbar";
+import '../styles/homepage.css'
 
 const Homepage = () => {
     return (  
-        <>
-    <Link className="brick"to="/">Home</Link>
-        <Link className="brick"to="/timer">Timer</Link>
-        <Link className="brick"to="/registration">Registration</Link>
-        <Outlet />
-        </>
+        <div className='hp'>
+            <Navbar />
+        </div>
         );
 }
  

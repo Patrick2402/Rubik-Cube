@@ -1,1 +1,43 @@
+*{
+    background-color: black;
+   
+}
 
+.input-email,.input-passwords{
+    padding: 1em;
+    background-color: black;
+    border: none;
+    width: 60%;
+    height: 2em;
+    font-size: 1em;
+    letter-spacing: 3px;
+    transition: all ease 1.5s;
+    border-bottom: 1px solid white;
+    color: orange;
+  }
+  
+  .input-email::placeholder,.input-passwords::placeholder{
+    color:orange;
+    font-weight: bold; 
+  }
+  .input-email:focus,.input-passwords:focus{
+    outline: none;
+    width: 90%;
+    border-bottom: 1px orange solid;
+    color: orange;
+  }
+
+  .registration-page{
+    display: flex;
+    
+    flex-direction: column;
+    
+    height: 100vh;
+  }
+  .box-two{
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

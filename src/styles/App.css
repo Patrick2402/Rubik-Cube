@@ -3,7 +3,7 @@
   background-color: black;
   color: orange;  
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -52,7 +52,7 @@ form{
   gap: 1em;
 }
 
-.input-email,.input-key{
+.input-email,.input-passwords{
   padding: 1em;
   background-color: black;
   border: none;
@@ -65,11 +65,11 @@ form{
   color: orange;
 }
 
-.input-email::placeholder,.input-key::placeholder{
+.input-email::placeholder,.input-passwords::placeholder{
   color:orange;
   font-weight: bold; 
 }
-.input-email:focus,.input-key:focus{
+.input-email:focus,.input-passwords:focus{
   outline: none;
   width: 90%;
   border-bottom: 1px orange solid;

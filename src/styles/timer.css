@@ -1,5 +1,4 @@
 .timer{
-    background-color: black;
     width: 100%;
     height: 100vh;
     color: white;
@@ -12,30 +11,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+   
     flex-direction: column;
 }
 .test{
     width: 100%;
     height: 100vh;
     display: flex;
-    background-color: black;
     flex-direction: row;
-
 }
 
 .timelist{
-    min-width: 15em; 
-    height: 90vh;
+    width: 25em; 
     display: flex;
     flex-direction: column;
     justify-content: left;
-    font-weight: bold;
-    letter-spacing: 0;
-    overflow: scroll;
-    background-color: rgb(28, 28, 28);
-
 }
+.timelist::-webkit-scrollbar {
+    display: none;
+  }
 
 
 .time{
@@ -72,25 +66,22 @@
 
 
 .small-brick{
-    width: 100%;
+    min-width: 30px;
     height: 2em;
-    color: orange;
-    display: grid;
-    grid-template-columns: 2em 3.5em auto;
-    align-items: center;
-    justify-content: space-evenly;
-    font-weight: bold;
-    border-right: 3px solid orange;
+    color: white;
+    border-right: 1px orange solid;
+    
+
+}
+.two:hover{
+    cursor: pointer;
 }
 
 
 .wrap-xd{
+    
     display: grid;
-    grid-auto-columns: 100%;
-    grid-auto-rows: 2em;
-    overflow: scroll;
-    height: 100%;
-
+    grid-template-columns: auto auto auto auto auto;
 }
 
 
@@ -112,17 +103,9 @@ h3{
 }
 
 
-.info-btn{
-    border-radius: 50%;
-    width: 20px;
-    height: 100%;   
-    background-color: rgb(28, 28, 28);
-    border: none;
+.two{
+    background-color: none;
     color: white;
-    border: 1px solid white;
-}
-.info-btn:hover{
-    cursor: pointer;
 }
 
 
