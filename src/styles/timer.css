@@ -4,6 +4,7 @@
     color: white;
     display: flex;
     flex-direction: column;
+    background-color: black;
 }
 .clock{
     width: 100%;
@@ -26,6 +27,7 @@
     display: flex;
     flex-direction: column;
     justify-content: left;
+   
 }
 .timelist::-webkit-scrollbar {
     display: none;
@@ -38,6 +40,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+   
 }
 
 .btn-timer{
@@ -51,26 +54,26 @@
 
 .scramble{
     width: 100%;
-    min-height: 3em;
-    height: 5em;
-    background-color: rgb(28, 28, 28);
-    display: flex;
-    align-items: center;
+
+    background-color: black;
+    display: grid;
     justify-content: center;
+    align-items: center;
+    grid-template-rows: 100px;
+    grid-template-columns: 15% 14% 55%;
     letter-spacing: 4px;
-    text-align: center;
     font-size:24px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 1px dotted white;
 }
-
 
 .small-brick{
     min-width: 30px;
     height: 2em;
     color: white;
     border-right: 1px orange solid;
-    
+    background-color: black;
 
 }
 .two:hover{
@@ -79,9 +82,10 @@
 
 
 .wrap-xd{
-    
+    background-color: black;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
+    
 }
 
 
@@ -104,7 +108,7 @@ h3{
 
 
 .two{
-    background-color: none;
+    background-color: black;
     color: white;
 }
 
@@ -119,4 +123,12 @@ h3{
     position: fixed;
     top: 60vh;
     right: 2vw;
+}
+
+.back-to-menu{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+
 }

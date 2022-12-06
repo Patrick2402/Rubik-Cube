@@ -4,6 +4,7 @@ import '../styles/timer.css';
 import {useEffect} from 'react';
 import Scramble from "../components/Scramble";
 import TimeInfo from "../components/TimeInfo";
+import { Link } from "react-router-dom";
 
 
 const arr = [];
@@ -93,6 +94,8 @@ const add =  data.map( (val,index) =>
   return (
     <div className="timer">
       <div className="scramble">
+        <Link to="/"className="back-to-menu">Menu</Link> 
+        <div className="back-to-menu"></div> 
         <div className="scramble-inside">{!isRunning && <Scramble a={isRunning} />}</div>
       </div>
       <div className="test">

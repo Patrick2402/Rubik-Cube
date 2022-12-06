@@ -1,6 +1,6 @@
 import { useState } from "react";
 import '../styles/registration.css';
-import Navbar from "../components/Navbar";
+import HomeNavbar from "../components/HomeNavbar";
 
 const Registration = () => {
 
@@ -41,7 +41,10 @@ const Registration = () => {
     return (
 
         <div className="registration-page">
-            <Navbar />
+            <div className="box-one">
+                <HomeNavbar />
+            </div>
+            
             <div className="box-two">
             <form onSubmit={handleSubmit}>
                 <span className="label-forms"> E-mail</span>
@@ -76,7 +79,6 @@ const Registration = () => {
                     type="submit"
                     value="Register"
                 />
-
             </form>
             </div> 
         </div>

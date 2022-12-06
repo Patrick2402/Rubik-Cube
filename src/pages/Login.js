@@ -1,4 +1,5 @@
 import Forms from "../components/Forms";
+import Homenavbar from "../components/HomeNavbar";
 import Navbar from "../components/Navbar";
 
 const Login = () => {
@@ -7,7 +8,9 @@ const Login = () => {
     return (
     
     <div className="canva">
-      <Navbar />
+      <div className="box-one">
+        <Homenavbar />
+      </div>
       <Forms />
     </div>
   );

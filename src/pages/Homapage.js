@@ -1,10 +1,12 @@
-import Navbar from "../components/Navbar";
+import Homenavbar from "../components/HomeNavbar";
 import '../styles/homepage.css'
 
 const Homepage = () => {
     return (  
         <div className='hp'>
-            <Navbar />
+            <div className="box-one">
+                <Homenavbar />
+            </div>
         </div>
         );
 }

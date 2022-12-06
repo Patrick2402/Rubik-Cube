@@ -1,0 +1,20 @@
+.Navbar{
+    background-color:unset;
+    width: 15%;
+    min-height:10em;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    padding: 10px;
+    margin-left: 20px;
+   
+}
+
+.Brick{
+    display: flex;
+    justify-content: left;
+    font-weight: bold;
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+}

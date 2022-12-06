@@ -3,6 +3,9 @@
     height: 100vh;
     background-image: url(\homepagecube.jpg);
     background-size: cover;
+    display: grid;
+    grid-template-columns: 20% 80%;
+
 }
 *{
     color:white;
