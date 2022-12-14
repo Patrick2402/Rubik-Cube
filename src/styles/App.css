@@ -79,10 +79,10 @@ form{
   color: white;
 }
 
-.btn{
+.btn,.btn-forms{
   background-color: red;
-  color: white;
-  min-width: 4em;
+  min-width: 2em;
+  color:white;
   max-width: 7em;
   font-weight: bold;
   font-size: 1.5em;
@@ -92,8 +92,11 @@ form{
   transition: all ease-in-out 0.3s;
   letter-spacing: 3px;
 }
+.btn-forms{
+ color: white;
+}
 
-.btn:hover{
+.btn:hover,.btn-forms:hover{
   transform: scale(0.95);
   cursor: pointer;
   border: 1px solid white;

@@ -1,7 +1,8 @@
 import { hover } from "@testing-library/user-event/dist/hover";
 import React, { useState } from "react";
 import Webcam from "react-webcam";
-import '../styles/homepage.css'
+import '../styles/homepage.css';
+import '../styles/playground.css';
 import { useRef } from "react";
 
 const Playground = () => {
@@ -54,7 +55,7 @@ const Playground = () => {
     }, [recordedChunks]);
   
     return (
-      <>
+      <div className="pg">
         <Webcam audio={false} ref={webcamRef} />
         {capturing ? (
           <button onClick={handleStopCaptureClick}>Stop Capture</button>
@@ -64,7 +65,7 @@ const Playground = () => {
         {recordedChunks.length > 0 && (
           <button onClick={handleDownload}>Download</button>
         )}
-      </>
+      </div>
     );
   };
   export default Playground;

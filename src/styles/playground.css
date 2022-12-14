@@ -1,8 +1,11 @@
 .test{
     width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:whitesmoke;
+    background-color:black;
+}
+
+.pg{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
 }

@@ -2,6 +2,10 @@ import { useState } from "react";
 import '../styles/registration.css';
 import HomeNavbar from "../components/HomeNavbar";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+
 const Registration = () => {
 
     const [username, setUsername] = useState('');
@@ -9,7 +13,28 @@ const Registration = () => {
     const [repassword, setrePassword] = useState('');
 
 
-
+    function OffCanvasExample({ name, ...props }) {
+        const [show, setShow] = useState(false);
+      
+        const handleClose = () => setShow(false);
+        const handleShow = () => setShow(true);
+      
+        return (
+          <div className="menu-main">
+            <button  onClick={handleShow} className="btn-menu">
+                Menu
+            </button>
+            <Offcanvas show={show} onHide={handleClose} {...props}>
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title>Menu</Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+               <HomeNavbar />
+              </Offcanvas.Body>
+            </Offcanvas>
+          </div>
+        );
+      }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -42,7 +67,9 @@ const Registration = () => {
 
         <div className="registration-page">
             <div className="box-one">
-                <HomeNavbar />
+            {[ 'end'].map((placement, idx) => (
+        <OffCanvasExample key={idx} placement={placement} name={placement} />
+      ))}
             </div>
             
             <div className="box-two">
@@ -75,7 +102,7 @@ const Registration = () => {
                     required
                 />
                 <input
-                    className="btn"
+                    className="btn-forms"
                     type="submit"
                     value="Register"
                 />

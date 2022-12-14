@@ -44,10 +44,13 @@
 }
 
 .btn-timer{
-    background-color: orange;
+    background-color: red;
+    width: 100px;
+    height: 50px;
     color: black;
     border:none;
-    padding: 1em;
+    margin-top: 20px;
+    padding: 5px;
     font-size: 24px;
     border-radius: 9%;
 }
@@ -72,7 +75,7 @@
     min-width: 30px;
     height: 2em;
     color: white;
-    border-right: 1px orange solid;
+    border-right: 1px red solid;
     background-color: black;
 
 }

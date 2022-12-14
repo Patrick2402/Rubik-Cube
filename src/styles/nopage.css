@@ -22,19 +22,19 @@
     color:black;
     font-size: 24px;
     border-radius: 9%;
-    background-color: orange;
-    text-shadow: 2px orange;
+    background-color: red;
+    text-shadow: 2px red;
 
 }
 
 span.orange{
-    background-color: orange;
+    background-color: red;
     color: black;
 }
 span.red{
     background-color: black;
     
-    color: orange;
+    color: red;
 }
 span{
     padding: 0.3em;

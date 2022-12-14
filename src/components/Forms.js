@@ -61,7 +61,7 @@ const handleChangeSsh = (event) =>{
     <a href="/" className="forgot-password">Forgot password?</a>
 
         <input 
-            className="btn"     
+            className="btn-forms"     
             type="submit"  
             value="Submit"
         />

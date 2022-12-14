@@ -15,9 +15,10 @@
     height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    align-items: left;
+    clear: both;
     overflow: scroll;
+    border-radius: 9px;
+    
     
 }
 .display-messeages::-webkit-scrollbar {
@@ -25,12 +26,14 @@
   }
 
 .small-messeage{
-    width: 400px;
-    background-color: green;
-    padding: 5px;
+    display: flex;
+    justify-content: left;
+    overflow-wrap: break-word;
+    background-color: rgb(20, 56, 58);
+    padding: 10px;
     border-radius: 9px;
     margin-top: 5px;
-    display: flex;
+   
 }
 
 
@@ -39,6 +42,10 @@
     border: none;
     height: 40px;
     color: black;
+    border-radius: 9px ;
+    background-color: black;
+    color:white;
+    border: 1px solid white;
 
 }
 

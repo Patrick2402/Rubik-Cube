@@ -7,14 +7,29 @@
     grid-template-columns: 20% 80%;
 
 }
-*{
-    color:white;
-}
+
 
 .webcamera{
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    color:black;
 
+}
+.menu-main{
+    color:black;
+}
+
+.btn-menu{
+   
+    position: relative;
+    background-color: unset;
+    color: white;
+    text-shadow: 2px  white;
+    top: 50px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    font-size: 32px;
 }

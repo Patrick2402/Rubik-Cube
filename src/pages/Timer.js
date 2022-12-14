@@ -34,6 +34,9 @@ function Timer() {
   const [singleScramble,setSingleScramble] = useState();
   const [i,seti] = useState(1);
   const [data,setdata] = useState([]);
+  const [average,setaverage] = useState(0.00);
+  const [ao12,setao12] = useState(0.00);
+  
 
 
   useEffect(() => {
@@ -43,7 +46,10 @@ function Timer() {
       setTime((time) => time + 10); }, 10);
       }else{
           
-          clearInterval(interval);     
+          clearInterval(interval);   
+          handleaverageClick();
+          handleaverageClick12();
+
       }
     return () => {
       clearInterval(interval);
@@ -86,6 +92,29 @@ function Timer() {
     setIndex(idex);
   };
 
+const handleaverageClick = () => {
+  let sum = 0;
+  let arr = [];
+  if(data.length >= 5 ){
+    for(let i = data.length-1 ; i > data.length-6; i--) arr.push(data[i].time);
+    arr.sort(); arr.pop(); arr.shift();
+    for(let i = 0 ; i < arr.length ; i++) sum +=arr[i];
+    setaverage((sum/3));
+  }
+}
+const handleaverageClick12 = () => {
+  let sum = 0;
+  let arr = [];
+  if(data.length >= 12 ){
+    for(let i = data.length-1 ; i > data.length-13; i--) arr.push(data[i].time);
+    arr.sort(); arr.pop(); arr.shift();
+    for(let i = 0 ; i < arr.length ; i++) sum +=arr[i];
+    setao12((sum/10));
+  }
+}
+
+
+
 const add =  data.map( (val,index) =>
     <div key={index} className="small-brick">
       <button className="two"onClick={(event)=>handleInfoClick(event,index)}>{val.parsedTime}</button>
@@ -97,6 +126,7 @@ const add =  data.map( (val,index) =>
         <Link to="/"className="back-to-menu">Menu</Link> 
         <div className="back-to-menu"></div> 
         <div className="scramble-inside">{!isRunning && <Scramble a={isRunning} />}</div>
+        
       </div>
       <div className="test">
       <div className="timelist">
@@ -106,6 +136,8 @@ const add =  data.map( (val,index) =>
       <div className="clock"> 
           <div className="time"><code>
         {isRunning ? seconds[0]:(time/1000).toFixed(2)}</code></div>
+        <code>Ao5:{average.toFixed(2)}</code>
+        <code>Ao12:{ao12.toFixed(2)}</code>
           {show && <TimeInfo
             ide={index} 
             show={setShow} 
