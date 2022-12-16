@@ -35,7 +35,7 @@ const Login = () => {
     
     <div className="canva">
       <div className="box-one">
-      {[ 'end'].map((placement, idx) => (
+      {[ 'start'].map((placement, idx) => (
         <OffCanvasExample key={idx} placement={placement} name={placement} />
       ))}
       </div>

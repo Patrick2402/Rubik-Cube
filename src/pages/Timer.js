@@ -123,21 +123,20 @@ const add =  data.map( (val,index) =>
   return (
     <div className="timer">
       <div className="scramble">
-        <Link to="/"className="back-to-menu">Menu</Link> 
+        <Link to="/"className="back-to-menu"><span id="menu">Menu</span></Link> 
         <div className="back-to-menu"></div> 
         <div className="scramble-inside">{!isRunning && <Scramble a={isRunning} />}</div>
-        
       </div>
-      <div className="test">
+      <div className="timer-canva">
       <div className="timelist">
         <h3>Times</h3>
         <div className="wrap-xd">{add}</div>
       </div>
       <div className="clock"> 
-          <div className="time"><code>
+          <div className="time"><code className="digites">
         {isRunning ? seconds[0]:(time/1000).toFixed(2)}</code></div>
-        <code>Ao5:{average.toFixed(2)}</code>
-        <code>Ao12:{ao12.toFixed(2)}</code>
+        <code className="digites">Ao5:{average.toFixed(2)}</code>
+        <code className="digites">Ao12:{ao12.toFixed(2)}</code>
           {show && <TimeInfo
             ide={index} 
             show={setShow} 
