@@ -1,10 +1,6 @@
 import { useState } from "react";
-import '../styles/registration.css';
-import HomeNavbar from "../components/HomeNavbar";
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
-import Offcanvas from 'react-bootstrap/Offcanvas';
+
 
 const Registration = () => {
 
@@ -12,29 +8,6 @@ const Registration = () => {
     const [password, setPassword] = useState('');
     const [repassword, setrePassword] = useState('');
 
-
-    function OffCanvasExample({ name, ...props }) {
-        const [show, setShow] = useState(false);
-      
-        const handleClose = () => setShow(false);
-        const handleShow = () => setShow(true);
-      
-        return (
-          <div className="menu-main">
-            <button  onClick={handleShow} className="btn-menu">
-                Menu
-            </button>
-            <Offcanvas show={show} onHide={handleClose} {...props}>
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title>Menu</Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-               <HomeNavbar />
-              </Offcanvas.Body>
-            </Offcanvas>
-          </div>
-        );
-      }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -49,7 +22,7 @@ const Registration = () => {
             }).then(() => {
                 console.log("Credentials sent");
             });
-        }else alert("Hasla nie sa takie same");
+        } else alert("Hasla nie sa takie same");
     }
 
     const handleChange = (event) => {
@@ -66,13 +39,7 @@ const Registration = () => {
     return (
 
         <div className="registration-page">
-            <div className="box-one">
-            {[ 'start'].map((placement, idx) => (
-        <OffCanvasExample key={idx} placement={placement} name={placement} />
-      ))}
-            </div>
-            
-            <div className="box-two">
+            <h1>Sign up</h1>
             <form onSubmit={handleSubmit}>
                 <span className="label-forms"> E-mail</span>
                 <input
@@ -107,7 +74,6 @@ const Registration = () => {
                     value="Register"
                 />
             </form>
-            </div> 
         </div>
     );
 }

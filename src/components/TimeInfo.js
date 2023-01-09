@@ -1,9 +1,8 @@
-import '../styles/infotime.css'
 
-const TimeInfo = ({ide,show,data,setdata}) => {
+const TimeInfo = ({ ide, show, data, setdata }) => {
 
-    const handleClick = () =>{
-        show(close=>!close); // closing windows
+    const handleClick = () => {
+        show(close => !close); // closing windows
     };
 
 
@@ -11,12 +10,12 @@ const TimeInfo = ({ide,show,data,setdata}) => {
     return (
         <div className="info-box">
             <button className="delete-btn" onClick={handleClick}>X</button>
-            <div className ="shownumber">No. {data[ide].id}</div>
+            <div className="shownumber">No. {data[ide].id}</div>
             <div className="showtime">Time: {data[ide].time}</div>
             <div className="showscramble">Scramble:{data[ide].scramble}</div>
 
         </div>
-      );
+    );
 }
- 
+
 export default TimeInfo;
