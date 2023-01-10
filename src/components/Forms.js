@@ -12,7 +12,8 @@ const Forms = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const response = fetch('http://localhost:3000/login_req', {
+        const url = process.env.REACT_APP_BASE_URL;
+        const response = fetch(url + '/login_req', {
             method: 'POST',
             mode: 'no-cors',
             headers: { "Content-Type": "application/json" },

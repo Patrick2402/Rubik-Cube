@@ -3,7 +3,9 @@ import styled, { css } from "styled-components";
 import ChatRoom from "./ChatRoom";
 import { io } from "socket.io-client";
 
-const socket = io("localhost:5000");
+
+const webrtcsvc = process.env.REACT_APP_BASE_URL_webRTC_SVC;
+const socket = io(webrtcsvc);
 const MainScreen = () => {
     const [chatRoom, setChatRoom] = useState("");
     const [me, setMe] = useState("");

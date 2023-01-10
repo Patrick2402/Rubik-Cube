@@ -1,6 +1,6 @@
-
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+
 export default function () {
     return (
         <div className='root-layout'>

@@ -12,7 +12,8 @@ const arr = [];
 
 
 function send_time(params) {
-  const response = fetch('http://localhost:3000/timer_collect', {
+  const url = process.env.REACT_APP_BASE_URL;
+  const response = fetch(url + '/timer_collect', {
     method: 'POST',
     mode: 'no-cors',
     headers: { "Content-Type": "application/json" },

@@ -21,13 +21,9 @@ const showmesseages =  data.map( (val) => <div className="small-messeage">{val}<
 
     return (  
         <div className="messenger-main-box">
-
-
-            <div className="display-messeages">
+           <div className="display-messeages">
                <>{showmesseages}</> 
             </div>
-
-
             <div className="display-messeages-two"> 
                 <form  className="mess-form" onSubmit={handleClick}>
                         <input 
@@ -43,9 +39,7 @@ const showmesseages =  data.map( (val) => <div className="small-messeage">{val}<
                             value="Submit" />
                 </form>
             </div>
-               
-                
-            </div>
+        </div>
     );
 }
  

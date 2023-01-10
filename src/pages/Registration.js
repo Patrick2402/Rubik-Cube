@@ -8,11 +8,11 @@ const Registration = () => {
     const [password, setPassword] = useState('');
     const [repassword, setrePassword] = useState('');
 
-
+    const url= process.env.URL;
     const handleSubmit = (event) => {
         event.preventDefault();
         if (password === repassword) {
-            fetch('http://localhost:3000/registration_req', {
+            fetch(url + '/registration_req', {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
